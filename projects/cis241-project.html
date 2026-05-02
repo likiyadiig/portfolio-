@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CIS 241 – Secure Auth – Malik Machaieie</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+            .feature-list li {
+                padding: 0.7rem 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                display: flex;
+                gap: 0.8rem;
+            }
+
+                .feature-list li::before {
+                    content: '→';
+                    color: var(--accent);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .screenshot-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                cursor: pointer;
+            }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        @media (max-width: 600px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="../index.html">Malik Machaieie</a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../CIS_Syllabi.html">Courses</a></li>
+            <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#cis266" class="active">CIS 266</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p class="subtitle">CIS 241 – Databases II</p>
+        <h1>Secure Authentication System</h1>
+        <p>A PHP MVC web application with secure user registration, login, and session management using password hashing.</p>
+    </header>
+
+    <main>
+
+        <h2 class="section-title">About the Project</h2>
+        <p style="margin-bottom:1.2rem; line-height:1.8;">
+            This project is a secure user authentication system built with PHP following the MVC
+            (Model-View-Controller) design pattern. It demonstrates how to properly handle user
+            accounts in a web application — from registration through to login and session management —
+            using industry-standard security practices.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8;">
+            The application uses <strong>bcrypt password hashing</strong> via PHP's <code>password_hash()</code>
+            function to securely store passwords in the MySQL database — meaning plain text passwords are
+            never stored. It also features session-based authentication to keep users logged in across pages,
+            and a dashboard that displays the user's account information upon successful login.
+        </p>
+
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">MVC Pattern</span>
+            <span class="tech-badge">bcrypt Hashing</span>
+            <span class="tech-badge">Sessions</span>
+            <span class="tech-badge">PDO</span>
+            <span class="tech-badge">HTML/CSS</span>
+            <span class="tech-badge">XAMPP</span>
+        </div>
+
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>User registration with username, email, and securely hashed password stored in MySQL</li>
+            <li>Login system that verifies credentials using <code>password_verify()</code> against the hashed password</li>
+            <li>Session-based authentication — users stay logged in across pages</li>
+            <li>Dashboard showing user details (username, email, registration date) after login</li>
+            <li>Invalid login handling with error messages displayed to the user</li>
+            <li>Logout functionality that destroys the session securely</li>
+            <li>MVC folder structure separating controllers, models, includes, and public pages</li>
+        </ul>
+
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshot-grid">
+            <div>
+                <a href="images/cis241-1.png" target="_blank">
+                    <img src="images/cis241-1.png" alt="Login Page" />
+                </a>
+                <p class="screenshot-caption">Login page — email and password fields</p>
+            </div>
+            <div>
+                <a href="images/cis241-4.png" target="_blank">
+                    <img src="images/cis241-4.png" alt="Register Page" />
+                </a>
+                <p class="screenshot-caption">Registration page — create a new account</p>
+            </div>
+            <div>
+                <a href="images/cis241-2.png" target="_blank">
+                    <img src="images/cis241-2.png" alt="Invalid Login" />
+                </a>
+                <p class="screenshot-caption">Invalid login — error handling in action</p>
+            </div>
+            <div>
+                <a href="images/cis241-3.png" target="_blank">
+                    <img src="images/cis241-3.png" alt="Dashboard" />
+                </a>
+                <p class="screenshot-caption">Dashboard — user info displayed after successful login</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Sample Code</h2>
+        <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted);">Secure password hashing on registration and verification on login:</p>
+        <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.82rem; line-height:1.7;">
+// Register — hash password before storing in database
+$hashedPassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+$stmt = $pdo->prepare(
+    "INSERT INTO users (username, email, password)
+     VALUES (:username, :email, :password)"
+);
+$stmt->execute([
+    ':username' => $_POST['username'],
+    ':email'    => $_POST['email'],
+    ':password' => $hashedPassword
+]);
+
+// Login — verify password against stored hash
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+$stmt->execute([':email' => $_POST['email']]);
+$user = $stmt->fetch();
+
+if ($user && password_verify($_POST['password'], $user['password'])) {
+    $_SESSION['user_id'] = $user['id'];
+    $_SESSION['username'] = $user['username'];
+    header('Location: dashboard.php');
+} else {
+    $error = "Invalid login.";
+}
+    </pre>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
+    </footer>
+
+</body>
+</html>
