@@ -1,55 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CIS 296 C# Project – Malik Machaieie</title>
-  <link rel="stylesheet" href="../style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportsPro – Malik Machaieie</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+            .feature-list li {
+                padding: 0.7rem 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                display: flex;
+                gap: 0.8rem;
+            }
+
+                .feature-list li::before {
+                    content: '→';
+                    color: var(--accent);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .screenshot-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        .screenshot-full {
+            margin-bottom: 1rem;
+        }
+
+            .screenshot-full img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            }
+
+        @media (max-width: 600px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <a class="logo" href="../index.html">Malik Machaieie</a>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../CIS_Syllabi.html">Courses</a></li>
-      <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <a class="logo" href="../index.html">Malik Machaieie</a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../CIS_Syllabi.html">Courses</a></li>
+            <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../index.html#projects" class="active">Projects</a></li>
+        </ul>
+    </nav>
 
-  <header>
-    <p class="subtitle">CIS 296 – MS Web Development II</p>
-    <h1>C# Project</h1>
-    <p>Advanced C# project documentation, screenshots, and sample code.</p>
-  </header>
+    <header>
+        <p class="subtitle">CIS 296 – MS Web Development II</p>
+        <h1>SportsPro</h1>
+        <p>A full-stack technical support management system built with ASP.NET Core MVC.</p>
+    </header>
 
-  <main>
-    <h2 class="section-title">Project Description</h2>
-    <p class="mb-4">
-      <!-- ADD YOUR PROJECT DESCRIPTION HERE -->
-      Describe what your C# project does, its purpose, and the technologies used (ASP.NET, C#, etc.).
-    </p>
+    <main>
 
-    <h2 class="section-title">Screenshots</h2>
-    <div class="mb-4">
-      <!-- ADD YOUR SCREENSHOTS HERE -->
-      <div class="note">Add your project screenshots here by uploading images to the projects/ folder and linking them with &lt;img&gt; tags.</div>
-    </div>
+        <h2 class="section-title">About the Project</h2>
+        <p style="margin-bottom:1.2rem; line-height:1.8;">
+            SportsPro is a web-based technical support management system developed for a fictional sports software company.
+            The application allows administrators to manage their entire support operation from one place — tracking products,
+            technicians, customers, incidents, and registrations.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8;">
+            Built using ASP.NET Core MVC with Entity Framework, the application follows the repository design pattern
+            and uses a code-first database approach with seed data to pre-populate the system. It features full
+            CRUD (Create, Read, Update, Delete) functionality across all entities, with a clean role-based dashboard
+            separating Admin and Technician views.
+        </p>
 
-    <h2 class="section-title">Sample Code</h2>
-    <div class="mb-4">
-      <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.85rem;">
-<!-- Paste your C# sample code here -->
-// Your C# sample code goes here
-      </pre>
-    </div>
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">ASP.NET Core MVC</span>
+            <span class="tech-badge">C#</span>
+            <span class="tech-badge">Entity Framework</span>
+            <span class="tech-badge">SQL Server</span>
+            <span class="tech-badge">Razor Views</span>
+            <span class="tech-badge">Bootstrap</span>
+            <span class="tech-badge">Repository Pattern</span>
+        </div>
 
-  </main>
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>Admin dashboard with links to manage Products, Technicians, Customers, Incidents, and Registrations</li>
+            <li>Technician view for updating assigned incidents</li>
+            <li>Full CRUD operations across all entities — add, edit, and delete records</li>
+            <li>Code-first Entity Framework database with migration support and seed data</li>
+            <li>Generic repository pattern for clean, reusable data access logic</li>
+            <li>Razor Views with Bootstrap for a clean, responsive UI</li>
+        </ul>
 
-  <footer>
-    &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
-  </footer>
+        <h2 class="section-title">Screenshots</h2>
+
+        <div class="screenshot-full">
+            <img src="images/sportspro-1.png" alt="SportsPro Home" />
+            <p class="screenshot-caption">Home page — Admin and Technician dashboard</p>
+        </div>
+
+        <div class="screenshot-grid">
+            <div>
+                <img src="images/sportspro-2.png" alt="Product Manager" />
+                <p class="screenshot-caption">Product Manager — list of all products</p>
+            </div>
+            <div>
+                <img src="images/sportspro-3.png" alt="Add Product" />
+                <p class="screenshot-caption">Add Product form</p>
+            </div>
+            <div>
+                <img src="images/sportspro-4.png" alt="Technicians" />
+                <p class="screenshot-caption">Technicians management page</p>
+            </div>
+            <div>
+                <img src="images/sportspro-5.png" alt="Incidents" />
+                <p class="screenshot-caption">Incidents tracking page</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Sample Code</h2>
+        <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted);">Generic repository pattern used for all data access across the application:</p>
+        <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.82rem; line-height:1.7;">
+// Repository.cs — Generic Repository Pattern
+public class Repository&lt;T&gt; : IRepository&lt;T&gt; where T : class
+{
+    private SportProContext context { get; set; }
+    private DbSet&lt;T&gt; dbset { get; set; }
+
+    public Repository(SportProContext ctx)
+    {
+        context = ctx;
+        dbset = context.Set&lt;T&gt;();
+    }
+
+    public virtual IEnumerable&lt;T&gt; List(QueryOptions&lt;T&gt; options)
+    {
+        IQueryable&lt;T&gt; query = dbset;
+
+        foreach (string include in options.Includes.Split(',',
+            StringSplitOptions.RemoveEmptyEntries))
+        {
+            query = query.Include(include);
+        }
+
+        if (options.Where != null)
+            query = query.Where(options.Where);
+
+        if (options.OrderBy != null)
+            query = query.OrderBy(options.OrderBy);
+
+        return query.ToList();
+    }
+
+    public virtual T? Get(int id) => dbset.Find(id);
+
+    public virtual void Insert(T entity) => dbset.Add(entity);
+
+    public virtual void Update(T entity) => dbset.Update(entity);
+
+    public virtual void Delete(T entity) => dbset.Remove(entity);
+
+    public virtual void Save() => context.SaveChanges();
+}
+    </pre>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
+    </footer>
 
 </body>
 </html>

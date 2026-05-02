@@ -1,57 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Advanced Project – Malik Machaieie</title>
-  <link rel="stylesheet" href="../style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Study Helper – Malik Machaieie</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+            .feature-list li {
+                padding: 0.7rem 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                display: flex;
+                gap: 0.8rem;
+            }
+
+                .feature-list li::before {
+                    content: '→';
+                    color: var(--accent);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .screenshot-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        @media (max-width: 600px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <a class="logo" href="../index.html">Malik Machaieie</a>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../CIS_Syllabi.html">Courses</a></li>
-      <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <a class="logo" href="../index.html">Malik Machaieie</a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../CIS_Syllabi.html">Courses</a></li>
+            <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../index.html#projects" class="active">Projects</a></li>
+        </ul>
+    </nav>
 
-  <header>
-    <p class="subtitle">Project Documentation</p>
-    <h1>Advanced Project</h1>
-    <p>A representative sample of advanced-level CIS coursework.</p>
-  </header>
+    <header>
+        <p class="subtitle">Advanced Project</p>
+        <h1>AI Study Helper</h1>
+        <p>A personalized AI-powered study tool built to make learning less overwhelming.</p>
+    </header>
 
-  <main>
-    <h2 class="section-title">Project Description</h2>
-    <p class="mb-4">
-      <!-- ADD YOUR PROJECT DESCRIPTION HERE -->
-      Describe what your project does, its purpose, and the technologies used.
-    </p>
+    <main>
 
-    <h2 class="section-title">Screenshots</h2>
-    <div class="mb-4">
-      <!-- ADD YOUR SCREENSHOTS HERE -->
-      <!-- Example: <img src="screenshot1.png" alt="Screenshot" style="max-width:100%; border-radius:8px; margin-bottom:1rem;" /> -->
-      <div class="note">Add your project screenshots here by uploading images to the projects/ folder and linking them with &lt;img&gt; tags.</div>
-    </div>
+        <h2 class="section-title">About the Project</h2>
+        <p style="margin-bottom:1.2rem; line-height:1.8;">
+            The AI Study Helper is a full-stack web application I built to serve as a personal, homemade tutor.
+            My goal was to create an AI assistant that responds in a structured, digestible way — something I felt
+            was missing from other AI tools where the responses can be overwhelming and hard to follow.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8;">
+            The app has two main modes: a <strong>General Knowledge Tutor</strong> for asking questions on any topic,
+            and a <strong>Coding Tutor</strong> where you can paste any code and get a structured breakdown — what the
+            code does, any bugs or issues, suggested improvements, and a direct answer to your specific question.
+            A <strong>Flashcards</strong> feature is also planned for a future update.
+        </p>
 
-    <h2 class="section-title">Sample Code</h2>
-    <div class="mb-4">
-      <!-- ADD YOUR CODE SAMPLES HERE -->
-      <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.85rem;">
-<!-- Paste your sample code here -->
-// Your sample code goes here
-      </pre>
-    </div>
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Ollama</span>
+            <span class="tech-badge">LLaMA 3.1</span>
+            <span class="tech-badge">SQLite</span>
+            <span class="tech-badge">JavaScript</span>
+        </div>
 
-  </main>
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>General Knowledge Tutor — ask the AI any question and get a clear, structured response</li>
+            <li>Coding Tutor — paste any code and ask a question; the AI returns what the code does, bugs found, improvements, and your specific answer</li>
+            <li>Responses formatted to avoid information overload — designed around how I personally learn best</li>
+            <li>Runs locally using Ollama + LLaMA 3.1, keeping all data private on your own machine</li>
+            <li>SQLite database for storing previous sessions and questions</li>
+            <li>Flashcards feature in development for reviewing past questions</li>
+        </ul>
 
-  <footer>
-    &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
-  </footer>
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshot-grid">
+            <div>
+                <img src="images/ai-study-helper-1.png" alt="General Knowledge Tutor" />
+                <p class="screenshot-caption">General Knowledge Tutor mode</p>
+            </div>
+            <div>
+                <img src="images/ai-study-helper-2.png" alt="Coding Tutor" />
+                <p class="screenshot-caption">Coding Tutor — paste your code</p>
+            </div>
+            <div>
+                <img src="images/ai-study-helper-3.png" alt="Coding Tutor analyzing" />
+                <p class="screenshot-caption">Coding Tutor — asking a question</p>
+            </div>
+            <div>
+                <img src="images/ai-study-helper-4.png" alt="Coding Tutor response" />
+                <p class="screenshot-caption">Coding Tutor — structured AI response</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Sample Code</h2>
+        <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted);">Server-side API endpoint handling the AI response from Ollama:</p>
+        <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.82rem; line-height:1.7;">
+// server/index.js — Ollama API call
+app.post('/api/analyze', async (req, res) => {
+  const { code, question } = req.body;
+
+  const prompt = `
+    You are a coding tutor. Analyze the following code and answer the question.
+    Code: ${code}
+    Question: ${question}
+    Respond with:
+    1. What the code does
+    2. Any bugs or issues
+    3. Suggested improvements
+    4. Answer to the question
+  `;
+
+  const response = await fetch('http://localhost:11434/api/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'llama3.1',
+      prompt: prompt,
+      stream: false
+    })
+  });
+
+  const data = await response.json();
+  res.json({ response: data.response });
+});
+    </pre>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
+    </footer>
 
 </body>
 </html>
