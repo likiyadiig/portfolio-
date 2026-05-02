@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrum 3 – Library Management – Malik Machaieie</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+            .feature-list li {
+                padding: 0.7rem 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                display: flex;
+                gap: 0.8rem;
+            }
+
+                .feature-list li::before {
+                    content: '→';
+                    color: var(--accent);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .screenshot-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                cursor: pointer;
+            }
+
+        .screenshot-full {
+            margin-bottom: 1rem;
+        }
+
+            .screenshot-full img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                cursor: pointer;
+            }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        @media (max-width: 600px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="../index.html">Malik Machaieie</a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../CIS_Syllabi.html">Courses</a></li>
+            <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../index.html#projects" class="active">Projects</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p class="subtitle">CIS 266 – Web Services | Scrum 3 Team Project</p>
+        <h1>Library Management Web Service</h1>
+        <p>A full-stack CRUD web service built as a team project using PHP, MySQL, AJAX, and JSON.</p>
+    </header>
+
+    <main>
+
+        <h2 class="section-title">About the Project</h2>
+        <p style="margin-bottom:1.2rem; line-height:1.8;">
+            The Library Management Web Service is a full-stack team project built for CIS 266. The system
+            allows users to manage a library's Books, Members, and Loans through a RESTful API that communicates
+            using AJAX and JSON. The project is structured into two main components: a <strong>Provider</strong>
+            (the backend web service) and a <strong>Client</strong> (the frontend interface).
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8;">
+            The backend uses OOP PHP with a generic <code>Database</code> class that handles all CRUD operations
+            across all three tables dynamically. The frontend client provides a clean, tabbed interface where
+            users can get, add, update, and delete records — with all responses displayed as formatted JSON in
+            real time.
+        </p>
+
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">AJAX</span>
+            <span class="tech-badge">JSON</span>
+            <span class="tech-badge">RESTful API</span>
+            <span class="tech-badge">OOP PHP</span>
+            <span class="tech-badge">PDO</span>
+            <span class="tech-badge">HTML/CSS/JS</span>
+            <span class="tech-badge">XAMPP</span>
+        </div>
+
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>3 database tables — Books, Members, and Loans — each with 7+ records</li>
+            <li>Full CRUD operations (Create, Read, Update, Delete) for all three tables via RESTful API</li>
+            <li>Generic Database class using PDO that handles all tables dynamically — no duplicate code</li>
+            <li>AJAX-powered client that displays all API responses as formatted JSON in real time</li>
+            <li>Tabbed frontend interface separating Books, Members, Loans, and the Tester</li>
+            <li>PHP Tester page showing raw and decoded JSON API responses for all tables</li>
+            <li>UML class diagrams for all PHP classes</li>
+        </ul>
+
+        <h2 class="section-title">UML Diagram</h2>
+        <div class="screenshot-full" style="margin-bottom:2rem;">
+            <a href="images/scrum3-uml.png" target="_blank">
+                <img src="images/scrum3-uml.png" alt="UML Class Diagram" />
+            </a>
+            <p class="screenshot-caption">UML Class Diagram — Book, Member, Loan, and Database classes</p>
+        </div>
+
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshot-grid">
+            <div>
+                <a href="images/scrum3-1.png" target="_blank">
+                    <img src="images/scrum3-1.png" alt="Books page" />
+                </a>
+                <p class="screenshot-caption">Books — full CRUD interface</p>
+            </div>
+            <div>
+                <a href="images/scrum3-2.png" target="_blank">
+                    <img src="images/scrum3-2.png" alt="Add and Update book JSON response" />
+                </a>
+                <p class="screenshot-caption">Add and Update book — JSON success response</p>
+            </div>
+            <div>
+                <a href="images/scrum3-3.png" target="_blank">
+                    <img src="images/scrum3-3.png" alt="Get All Books JSON" />
+                </a>
+                <p class="screenshot-caption">Get All Books — formatted JSON output</p>
+            </div>
+            <div>
+                <a href="images/scrum3-4.png" target="_blank">
+                    <img src="images/scrum3-4.png" alt="Members page" />
+                </a>
+                <p class="screenshot-caption">Members — full CRUD interface</p>
+            </div>
+            <div>
+                <a href="images/scrum3-5.png" target="_blank">
+                    <img src="images/scrum3-5.png" alt="Loans page" />
+                </a>
+                <p class="screenshot-caption">Loans — full CRUD interface</p>
+            </div>
+            <div>
+                <a href="images/scrum3-6.png" target="_blank">
+                    <img src="images/scrum3-6.png" alt="Tester page" />
+                </a>
+                <p class="screenshot-caption">PHP Tester — API JSON output tester</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Sample Code</h2>
+        <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted);">Generic Database class handling all CRUD operations dynamically across all tables:</p>
+        <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.82rem; line-height:1.7;">
+// Database.php — Generic PDO Database Class
+class Database {
+    private $host = "localhost";
+    private $dbname = "library_db";
+    private $username = "root";
+    private $password = "";
+    public $conn;
+
+    public function connect() {
+        $this->conn = new PDO(
+            "mysql:host={$this->host};dbname={$this->dbname}",
+            $this->username, $this->password
+        );
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+
+    public function getAll($table) {
+        $stmt = $this->conn->prepare("SELECT * FROM $table");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function insert($table, $data) {
+        $columns = implode(", ", array_keys($data));
+        $placeholders = ":" . implode(", :", array_keys($data));
+        $stmt = $this->conn->prepare(
+            "INSERT INTO $table ($columns) VALUES ($placeholders)"
+        );
+        foreach ($data as $key => $value) {
+            $stmt->bindValue(":$key", $value);
+        }
+        return $stmt->execute();
+    }
+
+    public function update($table, $id, $data) {
+        $fields = implode(", ", array_map(fn($k) => "$k = :$k", array_keys($data)));
+        $stmt = $this->conn->prepare(
+            "UPDATE $table SET $fields WHERE id = :id"
+        );
+        foreach ($data as $key => $value) {
+            $stmt->bindValue(":$key", $value);
+        }
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function delete($table, $id) {
+        $stmt = $this->conn->prepare("DELETE FROM $table WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+}
+    </pre>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
+    </footer>
+
+</body>
+</html>

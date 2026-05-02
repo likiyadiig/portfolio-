@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrum 4 – Live Voting System – Malik Machaieie</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+            .feature-list li {
+                padding: 0.7rem 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                display: flex;
+                gap: 0.8rem;
+            }
+
+                .feature-list li::before {
+                    content: '→';
+                    color: var(--accent);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .role-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+        }
+
+            .role-card h4 {
+                font-family: 'DM Serif Display', serif;
+                color: var(--primary);
+                margin-bottom: 0.3rem;
+                font-size: 1rem;
+            }
+
+            .role-card .role-title {
+                color: var(--accent);
+                font-size: 0.8rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 0.7rem;
+            }
+
+            .role-card ul {
+                list-style: none;
+                padding: 0;
+                font-size: 0.85rem;
+                color: var(--text-muted);
+                line-height: 1.7;
+            }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .screenshot-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                cursor: pointer;
+            }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        .video-note {
+            background: #fdf8ee;
+            border-left: 3px solid var(--accent);
+            padding: 0.8rem 1.2rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="../index.html">Malik Machaieie</a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../CIS_Syllabi.html">Courses</a></li>
+            <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../index.html#projects" class="active">Projects</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p class="subtitle">CIS 266 – Web Services | Scrum 4 Team Project</p>
+        <h1>Real-Time Live Voting System</h1>
+        <p>A real-time voting application built with Node.js and Socket.IO — votes update instantly for all connected users.</p>
+    </header>
+
+    <main>
+
+        <h2 class="section-title">About the Project</h2>
+        <p style="margin-bottom:1.2rem; line-height:1.8;">
+            The Live Voting System is a real-time web application built as a Scrum 4 team project for CIS 266.
+            The system allows multiple users to vote on a question simultaneously, with results updating live
+            for every connected user without any page refresh. It uses Socket.IO to establish a persistent
+            WebSocket connection between the server and all clients.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8;">
+            The application features a 30-second countdown timer, live progress bars showing vote counts,
+            automatic winner announcement when the timer ends, and a reset button to start a new poll.
+            The system prevents votes from being cast after the timer expires and visually indicates
+            when voting has closed.
+        </p>
+
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Socket.IO</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">HTML/CSS</span>
+            <span class="tech-badge">Bootstrap 5</span>
+            <span class="tech-badge">WebSockets</span>
+            <span class="tech-badge">Real-Time</span>
+        </div>
+
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>Real-time voting — all connected users see results update instantly via Socket.IO</li>
+            <li>30-second countdown timer that ends voting automatically when it reaches zero</li>
+            <li>Live progress bars displaying vote counts for each option as votes come in</li>
+            <li>Winner announcement displayed automatically when the timer expires</li>
+            <li>Voting buttons disabled after timer ends to prevent late submissions</li>
+            <li>Reset Poll button to clear votes and restart the timer for a new round</li>
+            <li>Background changes color to indicate when voting has closed</li>
+        </ul>
+
+        <h2 class="section-title">Team Roles</h2>
+        <div class="role-grid">
+            <div class="role-card">
+                <h4>Ethan Diaz</h4>
+                <div class="role-title">Scrum Master</div>
+                <ul>
+                    <li>Defined system architecture</li>
+                    <li>Managed event naming standards</li>
+                    <li>Ensured server/client integration</li>
+                    <li>Tested full system functionality</li>
+                    <li>Handled debugging and final merge</li>
+                </ul>
+            </div>
+            <div class="role-card">
+                <h4>Malik Machaieie</h4>
+                <div class="role-title">Server Developer</div>
+                <ul>
+                    <li>Built the Socket.IO server</li>
+                    <li>Implemented voting logic</li>
+                    <li>Created the countdown timer system</li>
+                    <li>Added winner calculation</li>
+                    <li>Managed real-time broadcasting</li>
+                </ul>
+            </div>
+            <div class="role-card">
+                <h4>Ezra</h4>
+                <div class="role-title">Client Developer</div>
+                <ul>
+                    <li>Built UI with HTML & Bootstrap</li>
+                    <li>Implemented Socket.IO client logic</li>
+                    <li>Handled vote submission</li>
+                    <li>Displayed live results and timer</li>
+                    <li>Managed UI updates and button states</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshot-grid">
+            <div>
+                <a href="images/scrum4-1.png" target="_blank">
+                    <img src="images/scrum4-1.png" alt="Live Voting in Progress" />
+                </a>
+                <p class="screenshot-caption">Voting in progress — live results updating in real time</p>
+            </div>
+            <div>
+                <a href="images/scrum4-2.png" target="_blank">
+                    <img src="images/scrum4-2.png" alt="Winner Announced" />
+                </a>
+                <p class="screenshot-caption">Timer ended — winner announced automatically</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Demo Video</h2>
+        <div class="video-note">
+            A full demo video of the Live Voting System in action is available upon request.
+            The recording was produced by the Scrum Master as part of the team presentation.
+        </div>
+
+        <h2 class="section-title">Sample Code</h2>
+        <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted);">Server-side Socket.IO logic — voting, timer, and winner calculation (my contribution):</p>
+        <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.82rem; line-height:1.7;">
+// index.js — Socket.IO Server (Malik's contribution)
+let votes = { JavaScript: 0, Python: 0, Java: 0, CSharp: 0 };
+let timeleft = 30;
+let votingActive = true;
+
+io.on('connection', (socket) => {
+    // Send current state to newly connected user
+    socket.emit('updateVote', votes);
+    io.emit('timer', timeleft);
+    io.emit('votingStatus', votingActive);
+
+    // Handle incoming vote
+    socket.on('vote', (choice) => {
+        if (!votingActive) return;
+        if (votes[choice] !== undefined) {
+            votes[choice]++;
+        }
+        io.emit('updateVote', votes); // broadcast to ALL users
+    });
+
+    // Handle poll reset
+    socket.on('reset', () => resetPoll());
+});
+
+// Countdown timer — runs every second
+setInterval(() => {
+    if (!votingActive) return;
+    if (timeleft > 0) {
+        timeleft--;
+        io.emit('timer', timeleft);
+    }
+    if (timeleft === 0) {
+        votingActive = false;
+        const result = getWinner();
+        io.emit('votingStatus', votingActive);
+        io.emit('winner', result); // announce winner to all users
+    }
+}, 1000);
+
+// Calculate winner from current votes
+function getWinner() {
+    let winner = "", max = -1;
+    for (let key in votes) {
+        if (votes[key] > max) {
+            max = votes[key];
+            winner = key;
+        }
+    }
+    return { winner, max };
+}
+    </pre>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
+    </footer>
+
+</body>
+</html>

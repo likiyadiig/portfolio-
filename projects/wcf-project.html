@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WCF Online Library – Malik Machaieie</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+            .feature-list li {
+                padding: 0.7rem 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                display: flex;
+                gap: 0.8rem;
+            }
+
+                .feature-list li::before {
+                    content: '→';
+                    color: var(--accent);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .screenshot-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                cursor: pointer;
+            }
+
+        .screenshot-full img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        @media (max-width: 600px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="../index.html">Malik Machaieie</a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../CIS_Syllabi.html">Courses</a></li>
+            <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../index.html#projects" class="active">Projects</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p class="subtitle">CIS 266 – Web Services | Unit 3</p>
+        <h1>WCF Online Library System</h1>
+        <p>A Windows Communication Foundation (WCF) web service with a C# console client for managing library books.</p>
+    </header>
+
+    <main>
+
+        <h2 class="section-title">About the Project</h2>
+        <p style="margin-bottom:1.2rem; line-height:1.8;">
+            The WCF Online Library System is a C# project built using Windows Communication Foundation (WCF)
+            to demonstrate service-oriented architecture. The project consists of two parts: a <strong>WCF Service</strong>
+            hosted locally that exposes library operations as a web service, and a <strong>Console Client</strong>
+            that connects to the service and allows the user to interact with the library through a menu-driven interface.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8;">
+            The service manages a collection of books identified by ISBN, supporting full CRUD operations as well
+            as borrowing and returning books. The console client communicates with the WCF service over a local
+            endpoint, demonstrating how service-oriented applications separate business logic from the client interface.
+        </p>
+
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">C#</span>
+            <span class="tech-badge">WCF</span>
+            <span class="tech-badge">.NET 8</span>
+            <span class="tech-badge">SOAP</span>
+            <span class="tech-badge">Service Contract</span>
+            <span class="tech-badge">Console Client</span>
+            <span class="tech-badge">Visual Studio</span>
+        </div>
+
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>WCF Service exposing library operations through a service contract interface</li>
+            <li>Add Book — add a new book by ISBN, title, and author</li>
+            <li>Update Book — modify an existing book's details by ISBN</li>
+            <li>Delete Book — remove a book from the library by ISBN</li>
+            <li>List All Books — display all books with their ISBN, title, author, and availability status</li>
+            <li>Search Books — find a specific book by ISBN or title</li>
+            <li>Borrow Book — mark a book as borrowed by ISBN</li>
+            <li>Return Book — mark a borrowed book as returned by ISBN</li>
+        </ul>
+
+        <h2 class="section-title">Screenshots</h2>
+
+        <div class="screenshot-full">
+            <a href="images/wcf-1.png" target="_blank">
+                <img src="images/wcf-1.png" alt="WCF Console Client Main Menu" />
+            </a>
+            <p class="screenshot-caption">Console Client — main menu with all available options</p>
+        </div>
+
+        <div class="screenshot-grid">
+            <div>
+                <a href="images/wcf-2.png" target="_blank">
+                    <img src="images/wcf-2.png" alt="Add Book" />
+                </a>
+                <p class="screenshot-caption">Add Book — enter ISBN, title, and author</p>
+            </div>
+            <div>
+                <a href="images/wcf-3.png" target="_blank">
+                    <img src="images/wcf-3.png" alt="List All Books" />
+                </a>
+                <p class="screenshot-caption">List All Books — displays all books with status</p>
+            </div>
+            <div>
+                <a href="images/wcf-4.png" target="_blank">
+                    <img src="images/wcf-4.png" alt="Borrow Book" />
+                </a>
+                <p class="screenshot-caption">Borrow Book — mark a book as borrowed by ISBN</p>
+            </div>
+            <div>
+                <a href="images/wcf-5.png" target="_blank">
+                    <img src="images/wcf-5.png" alt="Return Book" />
+                </a>
+                <p class="screenshot-caption">Return Book — mark a borrowed book as returned</p>
+            </div>
+        </div>
+
+        <div class="screenshot-full">
+            <a href="images/wcf-6.png" target="_blank">
+                <img src="images/wcf-6.png" alt="WCF Service Directory" />
+            </a>
+            <p class="screenshot-caption">WCF Service hosted locally — service directory showing all files</p>
+        </div>
+
+        <h2 class="section-title">Sample Code</h2>
+        <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted);">WCF Service contract and implementation for the library operations:</p>
+        <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.82rem; line-height:1.7;">
+// IService1.cs — WCF Service Contract
+[ServiceContract]
+public interface ILibraryService
+{
+    [OperationContract]
+    string AddBook(string isbn, string title, string author);
+
+    [OperationContract]
+    string BorrowBook(string isbn);
+
+    [OperationContract]
+    string ReturnBook(string isbn);
+
+    [OperationContract]
+    List&lt;Book&gt; GetAllBooks();
+
+    [OperationContract]
+    string DeleteBook(string isbn);
+}
+
+// Service1.svc.cs — WCF Service Implementation
+public class LibraryService : ILibraryService
+{
+    private static List&lt;Book&gt; books = new List&lt;Book&gt;();
+
+    public string AddBook(string isbn, string title, string author)
+    {
+        books.Add(new Book { ISBN = isbn, Title = title,
+                             Author = author, IsAvailable = true });
+        return "Book added successfully.";
+    }
+
+    public string BorrowBook(string isbn)
+    {
+        var book = books.FirstOrDefault(b => b.ISBN == isbn);
+        if (book == null) return "Book not found.";
+        if (!book.IsAvailable) return "Book is already borrowed.";
+        book.IsAvailable = false;
+        return "Book borrowed successfully.";
+    }
+
+    public string ReturnBook(string isbn)
+    {
+        var book = books.FirstOrDefault(b => b.ISBN == isbn);
+        if (book == null) return "Book not found.";
+        book.IsAvailable = true;
+        return "Book returned successfully.";
+    }
+}
+    </pre>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
+    </footer>
+
+</body>
+</html>

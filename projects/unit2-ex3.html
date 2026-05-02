@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit2 Ex3 – Malik Machaieie</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+            .feature-list li {
+                padding: 0.7rem 0;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                display: flex;
+                gap: 0.8rem;
+            }
+
+                .feature-list li::before {
+                    content: '→';
+                    color: var(--accent);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+            .screenshot-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                cursor: pointer;
+            }
+
+                .screenshot-grid img:hover {
+                    opacity: 0.9;
+                }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        @media (max-width: 600px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="../index.html">Malik Machaieie</a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../CIS_Syllabi.html">Courses</a></li>
+            <li><a href="../pdfs/MalikMachaieieResume.pdf" target="_blank">Resume</a></li>
+            <li><a href="../index.html#projects" class="active">Projects</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p class="subtitle">CIS 266 – Web Services | Unit 2 Exercise 3</p>
+        <h1>RESTful AJAX JSON PHP MySQL</h1>
+        <p>A web service demonstrating OOP and procedural PHP approaches with RESTful data access.</p>
+    </header>
+
+    <main>
+
+        <h2 class="section-title">About the Project</h2>
+        <p style="margin-bottom:1.2rem; line-height:1.8;">
+            This project was built as part of CIS 266 to demonstrate two different PHP programming approaches —
+            Object-Oriented Programming (OOP) and Procedural PHP — while implementing a RESTful web service
+            that communicates with a MySQL database using AJAX and JSON.
+        </p>
+        <p style="margin-bottom:2rem; line-height:1.8;">
+            The application connects to a MySQL <code>people</code> table and exposes it through a web service,
+            allowing users to retrieve a single record by ID or display all records in a table. The project
+            explores how the same functionality can be implemented using both OOP (with a <code>PeopleDAO</code>
+            class and a <code>Repository</code> pattern) and a procedural approach, highlighting the differences
+            in code structure and organization.
+        </p>
+
+        <h2 class="section-title">Technologies Used</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">AJAX</span>
+            <span class="tech-badge">JSON</span>
+            <span class="tech-badge">RESTful Web Services</span>
+            <span class="tech-badge">OOP</span>
+            <span class="tech-badge">Procedural PHP</span>
+            <span class="tech-badge">XAMPP</span>
+        </div>
+
+        <h2 class="section-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>RESTful web service that serves student data as JSON from a MySQL database</li>
+            <li>Display One Record — enter an ID and retrieve a single person's details via AJAX</li>
+            <li>Display All Records — load all records from the database into a dynamic HTML table</li>
+            <li>Web Service Tester — raw output showing the JSON data returned by the service</li>
+            <li>Implemented using both OOP (PeopleDAO class) and procedural PHP for comparison</li>
+        </ul>
+
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshot-grid">
+            <div>
+                <a href="images/unit2-ex3-1.png" target="_blank">
+                    <img src="images/unit2-ex3-1.png" alt="Home Page" />
+                </a>
+                <p class="screenshot-caption">Home page with navigation links</p>
+            </div>
+            <div>
+                <a href="images/unit2-ex3-2.png" target="_blank">
+                    <img src="images/unit2-ex3-2.png" alt="Web Service Tester" />
+                </a>
+                <p class="screenshot-caption">Web Service Tester — raw JSON output</p>
+            </div>
+            <div>
+                <a href="images/unit2-ex3-3.png" target="_blank">
+                    <img src="images/unit2-ex3-3.png" alt="Display One Record" />
+                </a>
+                <p class="screenshot-caption">Display One Record by ID</p>
+            </div>
+            <div>
+                <a href="images/unit2-ex3-4.png" target="_blank">
+                    <img src="images/unit2-ex3-4.png" alt="Display All Records" />
+                </a>
+                <p class="screenshot-caption">Display All Records in a table</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Sample Code</h2>
+        <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted);">OOP approach — PeopleDAO class handling database queries:</p>
+        <pre style="background:#1a1a2e; color:#c8a96e; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.82rem; line-height:1.7;">
+// PeopleDAO.php — OOP approach
+class PeopleDAO {
+    private mysqli $conn;
+
+    public function __construct(mysqli $conn) {
+        $this->conn = $conn;
+    }
+
+    // Return ALL rows as array of associative arrays
+    public function selectAll(): array {
+        $rows = [];
+        $sql = "SELECT id, first_name, last_name, bio
+                FROM people ORDER BY id ASC";
+        $result = $this->conn->query($sql);
+
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            $result->free();
+        }
+        return $rows;
+    }
+
+    // Return ONE row by ID
+    public function selectOne(int $id): array|false {
+        $sql = "SELECT id, first_name, last_name, bio
+                FROM people WHERE id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+}
+    </pre>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Malik Machaieie &mdash; STI CIS Electronic Portfolio
+    </footer>
+
+</body>
+</html>
